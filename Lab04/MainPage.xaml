@@ -128,7 +128,7 @@
                        Fill="Purple"
                        MinWidth="50" MinHeight="50"
                    RelativePanel.Below="RedRectangle"
-                       RelativePanel.AlignRightWith="RedRectangle"
+                   RelativePanel.AlignRightWith="RedRectangle"
                    RelativePanel.AlignLeftWith="greenRectangle"
                    />
         </RelativePanel>

@@ -26,5 +26,32 @@ namespace Lab04
         {
             this.InitializeComponent();
         }
+        private void MyCheckBox_Tapped(object sender, TappedRoutedEventArgs a)
+        {
+            CheckBoxResulttextBlock.Text = MyCheckBox.IsChecked.ToString();
+        }
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButtonTextBlock.Text = (bool)YesRadioButton.IsChecked ? "yes" : "No";
+        }
+        private void ComBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ComboBoxResulttextBlock == null) return;
+            var combo = (ComboBox)sender;
+            var item = (ComboBoxItem)combo.SelectedItem;
+            ComboBoxResulttextBlock.Text = item.Content.ToString();
+        }
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var seletItems = MyListBox.Items.Cast<ListBoxItem>()
+                .Where(p => p.IsSelected)
+                .Select(t => t.Content.ToString())
+                .ToArray();
+            ListoxResultTextBlock.Text = string.Join(", ", seletItems);
+        }
+        private void MytoggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButtonResultTextBlock.Text = MyButtonToggle.IsChecked.ToString();
+        }
     }
 }
